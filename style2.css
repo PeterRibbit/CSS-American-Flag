@@ -1,0 +1,98 @@
+body {
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    position: absolute;
+    background-color: black;
+}
+#flag{
+    width: 80vw;
+    height: calc( 80vw * .52631578947 );
+    background-color: red;
+    position: absolute;
+    z-index: 0;
+}
+#starBoxContainer {
+    width: 80vw;
+    height: calc( 80vw * .52631578947 );
+    position: absolute;
+    z-index: 3;
+}
+#starBox{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: space-around;
+    width: calc(80vw * .76 / 1.9);
+    height: calc(80vw * .52631578947 * .76 / 1.9 * 7 / 5);
+    background-color: blue;
+    align-self: flex-start;
+    justify-self: flex-start;
+    z-index: 4;
+}
+#inner{
+    position: absolute;
+    flex: wrap;
+    z-index: 5;
+    padding-top: (0.054 * 0.5263157894 * 100vw);
+    align-content: space-around;
+    align-items: space-between;
+}
+#outer{
+    position: absolute;
+    flex: wrap;
+    z-index: 6;
+    align-content: space-around;
+    align-items: space-around;
+}
+div.stripe {
+    background-color: white;
+    width: 80vw;
+    height: calc(80vw * .52631578947 / 13);
+    z-index: 1;
+}
+div.stripe:nth-child(2n) {
+    background-color: red;
+}
+#outer > star:before {
+    content: "\2605"; /* The UTF-8 code for a filled-in star */
+    font-size: calc(0.0616 * 0.5263157894* 100vw);
+    color:black;
+    margin-left: calc(0.063 / 2 * 0.5263157894 * 100vw);
+    margin-top: (0.027 * 0.5263157894 * 100vw);
+
+}
+
+#inner > star:before{
+    content: "\2605"; /* The UTF-8 code for a filled-in star */
+    font-size: calc(0.0616 * 0.5263157894* 100vw);
+    color:orange;
+    margin-left: calc(0.063 / 2 * 0.5263157894 * 100vw);
+    margin-top: (0.054 * 2 * 0.5263157894 * 100vw);
+}
+#inner > star:nth-of-type(5n-4){
+    margin-left: calc(0.063 * 4/5 *  0.5263157894 * 100vw);
+}
+/*
+
+Standard proportions
+A	Hoist (width) of flag	1.0             adj: 0.5263157894
+B	Fly (length) of flag	1.9             adj: 1
+C	Hoist (width) of Union	0.5385 (7/13)   adj: (0.5263157894 * 7 / 13)  
+D	Fly (length) of Union	0.76            adj: (0.5263157894 * .76)
+E	padding+1/2F	0.054
+F	 	0.054
+G	 	0.063
+H	 	0.063
+K	Diameter of star	0.0616              : 0.0616*0.5263157894
+L	Width of stripe	0.0769 (1/13)
+
+*/
